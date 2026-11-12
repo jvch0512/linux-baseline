@@ -1,0 +1,9 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash -n linux-baseline.sh tests/run.sh
+      - run: bash tests/run.sh
